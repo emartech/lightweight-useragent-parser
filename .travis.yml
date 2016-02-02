@@ -2,8 +2,8 @@ language: ruby
 script: rspec
 
 rvm:
-  - 2.1
-  - 2.3
+  - 2.1.2
+  - 2.3.0
   - jruby-18mode
   - jruby-19mode
 
