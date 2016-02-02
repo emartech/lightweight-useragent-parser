@@ -1,0 +1,21 @@
+language: ruby
+script: rspec
+
+rvm:
+  - 1.9
+  - 2.0
+  - 2.1
+  - jruby-18mode
+  - jruby-19mode
+
+  - ruby-head
+  - jruby-head
+
+env:
+  global:
+    - VERBOSE=true
+    - TIMEOUT=1
+
+branches:
+  only:
+    - master
