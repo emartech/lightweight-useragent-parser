@@ -91,5 +91,5 @@ end
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'lightweight_useragent_parser'
-TEST_DATA = File.read(File.join(File.dirname(__FILE__),'data','10K.txt')).split("\n")
+require 'lightweight_user_agent_parser'
+TEST_DATA = File.read(File.join(File.dirname(__FILE__),'fixtures','10K.txt')).split("\n")

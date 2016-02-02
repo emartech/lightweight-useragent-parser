@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+lib_folder = File.expand_path(File.join(File.dirname(__FILE__),'..', 'lib'))
+$LOAD_PATH.unshift lib_folder
+require 'lightweight_user_agent_parser'
+
+require 'irb'
+IRB.start

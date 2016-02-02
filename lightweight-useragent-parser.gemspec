@@ -6,7 +6,7 @@ require 'lightweight_useragent_parser/version'
 Gem::Specification.new do |spec|
 
   spec.name          = 'lightweight-useragent-parser'
-  spec.version       = "#{LightweightUseragentParser::VERSION}"
+  spec.version       = "#{LightweightUserAgentParser::VERSION}"
 
   spec.license       = 'MIT License'
   spec.authors       = ['Emarsys Technologies','Peter Kozma','Adam Luzsi']
