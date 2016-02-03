@@ -1,4 +1,9 @@
-# lightweight-useragent-parser
+# [lightweight-useragent-parser][![Build Status][travis-image]][travis-link]
+
+[travis-image]: https://travis-ci.org/emartech/lightweight-useragent-parser.svg?branch=master
+[travis-link]: https://travis-ci.org/emartech/lightweight-useragent-parser
+[travis-home]: http://travis-ci.org/
+
 Very lightweight user agent parser with the aim of detecting mobile devices and identifying main device platforms.
 
 
