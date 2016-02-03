@@ -17,12 +17,6 @@ class LightweightUserAgentParser
       inner_content_elements && inner_content_elements[2]
     end
 
-    def to_hash
-      (ContentAnalyzer.public_instance_methods(false)-[:to_hash]).reduce({}) do |memory,method_name|
-        memory.merge!(method_name => self.public_send(method_name));memory
-      end
-    end
-
     protected
 
     def inner_content_elements

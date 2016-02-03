@@ -114,7 +114,7 @@ RSpec.describe LightweightUserAgentParser do
   end
 
   describe '#is_mobile?' do
-    subject { described_class.new(ua_str).mobile? }
+    subject { described_class.new(ua_str).is_mobile? }
     TEST_CASES.each do |meta|
 
       context "when platform is #{meta[:platform]}" do
@@ -130,6 +130,39 @@ RSpec.describe LightweightUserAgentParser do
       end
 
     end
+  end
+
+  describe '#to_hash' do
+    subject { described_class.new(user_agent_string).to_hash }
+
+    TEST_CASES.each do |meta|
+
+      context "when user agent string is: #{meta[:ua_str].inspect}" do
+        let(:user_agent_string) { meta[:ua_str] }
+
+        it 'should parse platform and mobile state' do
+
+          expected_hash = {
+              mobile: meta[:mobile],
+              platform: meta[:platform].to_sym,
+              md5: Digest::MD5.hexdigest(meta[:ua_str]),
+              anonymized: meta[:ua_str].include?('anonymized') ? true : false
+          }
+
+          is_expected.to eq expected_hash
+
+        end
+      end
+
+    end
+
+  end
+
+  describe '#md5' do
+    subject{ described_class.new(user_agent_string).md5}
+    let(:user_agent_string){'UCWEB/2.0 (Linux; U; Adr 4.2.1; zh-CN; Lenovo A3000) U2/1.0.0 UCBrowser/9.8.5.442 U2/1.0.0 Mobile'}
+
+    it { is_expected.to eq '50e330f013751df448e496bc19def744' }
   end
 
 end
