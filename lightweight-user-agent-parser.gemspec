@@ -5,7 +5,7 @@ require 'lightweight_useragent_parser/version'
 
 Gem::Specification.new do |spec|
 
-  spec.name          = 'lightweight-useragent-parser'
+  spec.name          = 'lightweight-user-agent-parser'
   spec.version       = "#{LightweightUserAgentParser::VERSION}"
 
   spec.license       = 'MIT License'
