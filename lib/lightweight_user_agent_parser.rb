@@ -1,6 +1,6 @@
-require 'lightweight_useragent_parser/version'
-require 'lightweight_useragent_parser/regexp'
-require 'lightweight_useragent_parser/content_analyzer'
+require 'lightweight_user_agent_parser/version'
+require 'lightweight_user_agent_parser/regexp'
+require 'lightweight_user_agent_parser/content_analyzer'
 
 class LightweightUserAgentParser
 

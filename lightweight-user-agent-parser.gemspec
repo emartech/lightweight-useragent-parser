@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'lightweight_useragent_parser/version'
+require 'lightweight_user_agent_parser/version'
 
 Gem::Specification.new do |spec|
 
-  spec.name          = 'lightweight-user-agent-parser'
+  spec.name          = 'lightweight_user_agent_parser'
   spec.version       = "#{LightweightUserAgentParser::VERSION}"
 
   spec.license       = 'MIT License'
