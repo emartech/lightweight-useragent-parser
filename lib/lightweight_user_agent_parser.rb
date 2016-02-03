@@ -31,7 +31,7 @@ class LightweightUserAgentParser
       end
 
       # if detected as a mobile such as Nokia C2-01 and others than Symbian
-      return is_mobile? ? LightweightUserAgentParser::NameTable.symbian : :other
+      return :other
 
     }.call
   end
