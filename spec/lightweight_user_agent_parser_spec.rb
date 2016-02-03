@@ -3,6 +3,12 @@ require 'spec_helper'
 RSpec.describe LightweightUserAgentParser do
 
   TEST_CASES = [
+
+      {
+          ua_str: '',
+          mobile: false,
+          platform: 'other'
+      },
       {
           ua_str: 'UCWEB/2.0 (Linux; U; Adr 4.2.1; zh-CN; Lenovo A3000) U2/1.0.0 UCBrowser/9.8.5.442 U2/1.0.0 Mobile',
           mobile: true,
@@ -112,11 +118,15 @@ RSpec.describe LightweightUserAgentParser do
     TEST_CASES.each do |meta|
 
       context "when platform is #{meta[:platform]}" do
-        let(:ua_str) { meta[:ua_str] }
 
-        it "then the mobile state should be #{meta[:mobile]}" do
-          is_expected.to eq meta[:mobile]
+        context "and the user agent string is: #{meta[:ua_str].inspect}" do
+          let(:ua_str) { meta[:ua_str] }
+
+          it "then the mobile state should be #{meta[:mobile]}" do
+            is_expected.to eq meta[:mobile]
+          end
         end
+
       end
 
     end

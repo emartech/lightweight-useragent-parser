@@ -12,7 +12,7 @@ class LightweightUserAgentParser
   alias to_s user_agent_string
 
   def initialize(user_agent_str)
-    @user_agent_string = user_agent_str || raise(ArgumentError)
+    @user_agent_string = (user_agent_str || raise(ArgumentError)).to_s
   end
 
   def platform
@@ -30,7 +30,6 @@ class LightweightUserAgentParser
         end
       end
 
-      # if detected as a mobile such as Nokia C2-01 and others than Symbian
       return :other
 
     }.call
@@ -40,13 +39,19 @@ class LightweightUserAgentParser
     mobile = !!(user_agent_string =~ MOBILE_REGEXP)
     desktop = !!(user_agent_string =~ DESKTOP_REGEXP)
 
-    (mobile or not desktop) #and not anonymized?
+    (mobile or not desktop) and not empty?
   end
 
   alias mobile? is_mobile?
 
   def anonymized?
     !!(user_agent_string =~ ANONYMIZED_REGEXP)
+  end
+
+  protected
+
+  def empty?
+    user_agent_string.empty?
   end
 
 end
