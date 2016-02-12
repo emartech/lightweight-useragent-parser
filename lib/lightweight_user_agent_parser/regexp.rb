@@ -51,6 +51,7 @@ class LightweightUserAgentParser
   MOBILE_REGEXP = /#{mobile_regexp_str}/i.freeze
 
   desktop_device_matcher = DEVICES_META.select { |ary| DESKTOP_DEVICES.include?(ary[0]) }.map { |e| e[1] }.join('|')
+  desktop_device_matcher << '|Mozilla/\d\.\d.*(compatible.*)'
   DESKTOP_REGEXP = /#{desktop_device_matcher}/i.freeze
 
   ANONYMIZED_REGEXP = Regexp.new(DEVICES_META.find { |sym, regex_str| sym == :anonymized }.last, Regexp::IGNORECASE)

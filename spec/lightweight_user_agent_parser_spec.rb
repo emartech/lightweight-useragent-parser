@@ -78,6 +78,11 @@ RSpec.describe LightweightUserAgentParser do
           ua_str: 'Firefox/33.1 (x86 de); anonymized by Abelssoft 2048434593',
           mobile: false,
           platform: 'anonymized'
+      },
+      {
+          ua_str: 'Mozilla/4.0 (compatible;)',
+          mobile: false,
+          platform: 'other'
       }
   ]
 
