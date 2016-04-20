@@ -83,6 +83,11 @@ RSpec.describe LightweightUserAgentParser do
           ua_str: 'Mozilla/4.0 (compatible;)',
           mobile: false,
           platform: 'other'
+      },
+      {
+          ua_str: 'Pekvolt/2.1 (nope)',
+          mobile: false,
+          platform: 'other'
       }
   ]
 

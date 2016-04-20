@@ -41,7 +41,7 @@ class LightweightUserAgentParser
     mobile = !!(user_agent_string =~ MOBILE_REGEXP)
     desktop = !!(user_agent_string =~ DESKTOP_REGEXP)
 
-    (mobile or not desktop) and not empty?
+    ((mobile or not desktop) and not empty?) and platform != :other
   end
   alias mobile? is_mobile?
 
